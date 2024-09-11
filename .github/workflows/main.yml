@@ -65,12 +65,9 @@ jobs:
 
           name: Ping Google Every 5 Seconds
 
-on: 
-  push:
-    branches:
-      - main
 
-jobs:
+  
+  
   ping:
     runs-on: ubuntu-latest
     steps:
