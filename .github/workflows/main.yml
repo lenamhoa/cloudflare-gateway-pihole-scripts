@@ -1,4 +1,3 @@
-
 name: Update Filter Lists
 
 on:
@@ -62,22 +61,6 @@ jobs:
           CLOUDFLARE_LIST_ITEM_LIMIT: ${{ secrets.CLOUDFLARE_LIST_ITEM_LIMIT }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           FAST_MODE: ${{ vars.FAST_MODE }}
-
-          name: Ping Google Every 5 Seconds
-
-
-  
-  
-  ping:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Ping Google Every 5 Seconds
-        run: |
-          for i in {1..12}; do  # Chạy 12 lần (tổng cộng 60 giây)
-            echo "Pinging Google... Attempt $i"
-            ping -c 1 google.com
-            sleep 5
-          done
 
       - name: Send ping request
         if: env.PING_URL != ''
